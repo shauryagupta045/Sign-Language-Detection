@@ -4,31 +4,30 @@
     justify-content: space-between;
     align-items: flex-start;
     flex-direction: row;
-
     margin: 1rem;
 }
 
 .signlang__features-container__feature-title {
     flex: 1;
-    max-width: 500px;
+    max-width: 180px;
     margin-right: 2rem;
 }
 
 .signlang__features-container__feature-title h1 {
-    font-family: var(--font-family);
+    font-family: var(--font-heading);
     font-weight: 800;
-    font-size: 20px;
+    font-size: 18px;
     line-height: 24px;
-    word-spacing: 2px;
+    letter-spacing: 0.04em;
     color: #fff;
 }
 
 .signlang__features-container__feature-title div {
-    width: 50px;
-    height: 2px;
+    width: 38px;
+    height: 3px;
     background: var(--gradient-bar);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.5rem;
 }
 
 .signlang__features-container_feature-text {
@@ -40,9 +39,8 @@
 .signlang__features-container_feature-text p {
     font-family: var(--font-family);
     font-weight: 500;
-    font-size: 18px;
+    font-size: 14px;
     line-height: 24px;
-    word-spacing: 5px;
     color: var(--color-text);
 }
 
@@ -59,5 +57,6 @@
 
     .signlang__features-container__feature {
         margin: 1rem 0;
+        flex-direction: column;
     }
 }

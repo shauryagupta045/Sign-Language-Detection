@@ -4,17 +4,19 @@
   align-items: flex-start;
   font-family: var(--font-family);
   gap: 2rem;
-  /* keep content centered horizontally on smaller widths */
   width: 100%;
   box-sizing: border-box;
+  padding: 2rem 4rem;
 }
 
-/* keep camera and canvas size synced */
 .signlang_webcam {
   width: 600px;
   height: 500px;
   z-index: 999;
   object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border: 2px solid var(--glass-border);
 }
 
 .signlang_canvas {
@@ -24,9 +26,9 @@
   width: 600px;
   height: 500px;
   z-index: 999;
+  border-radius: 20px;
 }
 
-/* reserve same width for the text container to avoid camera shifting when text is empty */
 .signlang_text-container {
   width: 600px;
   min-width: 300px;
@@ -34,6 +36,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  border-radius: 20px;
+  border: 1px solid var(--glass-border);
+  height: 500px;
 }
 
 .signlang_data-container {
@@ -42,6 +50,7 @@
   align-items: center;
   flex-direction: column;
   text-align: center;
+  margin-top: 1rem;
 }
 
 .signlang_data-container .signlang_data {
@@ -49,95 +58,106 @@
   display: flex;
   align-items: center;
   padding: 0 1rem;
+  justify-content: space-between;
 }
 
 .signlang_data-container button {
-  width: 100px;
-  height: 30px;
-  font-size: 20px;
-  font-weight: 500;
+  width: 120px;
+  height: 40px;
+  font-size: 18px;
+  font-weight: 600;
   border: none;
   outline: none;
-  background-color: var(--color-subtext);
+  background: var(--color-primary);
   color: #fff;
   font-family: var(--font-family);
-  border-radius: 8px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(174, 103, 250, 0.4);
+}
+
+.signlang_data-container button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(174, 103, 250, 0.6);
 }
 
 .signlang_data-container p {
   font-size: 20px;
   margin: 1rem;
-  width: 20%;
-  display: flex;
-  justify-content: flex-start;
+  font-weight: 700;
+  color: var(--color-accent);
 }
 
 .gesture_output {
-  color: var(--color-subtext);
+  color: var(--color-accent);
   width: 100%;
 }
 
 .signlang_text-container h2 {
-  font-size: 32px;
+  font-size: 28px;
   text-transform: uppercase;
   text-align: center;
-  letter-spacing: 5px;
-  margin-bottom: 2rem;
+  letter-spacing: 2px;
+  margin-bottom: 1.5rem;
+  font-family: var(--font-heading);
+  background: var(--gradient-text);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .signlang_text-div {
   width: 100%;
-  max-height: 550px;
+  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   padding: 1rem;
   overflow-y: auto;
-  flex-shrink: 0;
-  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  margin-bottom: 1rem;
 }
 
 .detected_text {
-  font-size: 30px;
+  font-size: 24px;
   font-weight: 500;
   color: white;
   text-align: center;
   word-wrap: break-word;
-  overflow-wrap: break-word;
-  max-width: 100%;
   line-height: 1.5;
-  white-space: pre-wrap;
 }
 
 .signlang_text-buttons {
-  margin-top: 2rem;
+  margin-top: 1rem;
   display: flex;
   justify-content: center;
-  gap: 2rem;
+  gap: 1.5rem;
   width: 100%;
 }
 
 .signlang_text-buttons button {
   width: 120px;
   height: 45px;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
   border: none;
   outline: none;
-  background-color: var(--color-subtext);
+  background: var(--glass-bg);
+  border: 1px solid var(--color-primary);
   color: #fff;
   font-family: var(--font-family);
-  border-radius: 5px;
+  border-radius: 50px;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .signlang_text-buttons button:hover {
-  transform: scale(1.05);
-  opacity: 0.9;
+  background: var(--color-primary);
+  transform: translateY(-2px);
 }
-
 
 .signlang_detection_notLoggedIn {
   display: flex;
@@ -145,104 +165,54 @@
   align-items: center;
   flex-direction: column;
   margin: 2rem;
+  text-align: center;
 }
 
 .signlang_detection_notLoggedIn h1 {
-  letter-spacing: 5px;
-  font-weight: 800;
+  font-size: 34px;
+  margin-bottom: 2rem;
+  font-family: var(--font-heading);
 }
 
 .signlang_detection_notLoggedIn p {
-  color: #fff;
-  font-size: 1rem;
-  text-align: center;
-  width: 60%;
-  letter-spacing: 2px;
-  font-weight: bold;
+  color: var(--color-text);
+  font-size: 18px;
+  max-width: 600px;
+  line-height: 30px;
 }
 
 .signlang_detection_notLoggedIn img {
-  width: 600px;
-  height: 400px;
-  object-fit: contain;
-  margin: 1rem 0;
-  border-radius: 8px;
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  margin: 2rem 0;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
-/* Responsive adjustments */
-@media screen and (max-width: 1080px) {
-  .signlang_webcam {
-    width: 520px;
-    height: 450px;
-  }
-
-  .signlang_canvas {
-    width: 520px;
-    height: 450px;
-  }
-
-  .signlang_text-container {
-    width: 520px;
-  }
-}
-
-@media screen and (max-width: 990px) {
+@media screen and (max-width: 1250px) {
   .signlang_detection-container {
     flex-direction: column;
     align-items: center;
+    padding: 2rem;
   }
 
   .signlang_text-container {
     width: 100%;
-  }
-
-  .signlang_canvas,
-  .signlang_webcam {
-    width: 90%;
-    height: auto;
+    max-width: 600px;
+    margin-top: 2rem;
   }
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 650px) {
 
-  .signlang_webcam {
-    width: 100%;
-    height: fit-content;
-  }
-
+  .signlang_webcam,
   .signlang_canvas {
     width: 100%;
-    height: fit-content;
+    height: auto;
   }
 
-  .signlang_text-div {
-    width: fit-content;
-    height: 300px;
+  .signlang_detection-container {
+    padding: 1rem;
   }
-
-  .detected_text {
-    font-size: 24px;
-  }
-
-  .signlang_data-container .signlang_data {
-    padding: 0 0.5rem;
-  }
-
-  .signlang_data-container p {
-    font-size: 18px;
-    width: 30%;
-  }
-
-  .signlang_detection_notLoggedIn img {
-    width: 300px;
-    height: 300px;
-    margin: 0;
-  }
-
-  .signlang_detection_notLoggedIn p {
-    font-size: 0.8rem;
-    width: 100%;
-  }
-
-
 }

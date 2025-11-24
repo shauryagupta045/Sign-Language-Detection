@@ -16,13 +16,14 @@
     align-items: center;
     width: 100%;
     max-width: 1200px;
-    margin-bottom: 4rem;
+    margin-bottom: 6rem;
     padding: 2rem;
+    position: relative;
 }
 
 .learn-hero-content {
     flex: 1;
-    padding-right: 2rem;
+    padding-right: 4rem;
     animation: slideRight 1s ease-out;
 }
 
@@ -31,6 +32,11 @@
     font-weight: 800;
     line-height: 75px;
     margin-bottom: 1.5rem;
+    font-family: var(--font-heading);
+    background: var(--gradient-text);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .learn-hero-content p {
@@ -46,6 +52,19 @@
     justify-content: center;
     align-items: center;
     animation: slideLeft 1s ease-out;
+    position: relative;
+}
+
+.learn-hero-image::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: var(--gradient-bar);
+    filter: blur(60px);
+    opacity: 0.2;
+    z-index: -1;
+    border-radius: 50%;
 }
 
 .learn-hero-image img {
@@ -53,6 +72,7 @@
     max-width: 500px;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--glass-border);
 }
 
 /* Chart Section */
@@ -61,7 +81,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 6rem;
+    margin-bottom: 8rem;
     animation: fadeIn 1.5s ease-out;
 }
 
@@ -69,20 +89,26 @@
     font-size: 40px;
     margin-bottom: 3rem;
     text-align: center;
+    font-family: var(--font-heading);
+    background: var(--gradient-text);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .learn-chart-container {
-    background: rgba(255, 255, 255, 0.05);
+    background: var(--glass-bg);
     padding: 2rem;
     border-radius: 20px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
     transition: transform 0.3s ease;
 }
 
 .learn-chart-container:hover {
     transform: scale(1.02);
+    background: rgba(255, 255, 255, 0.05);
 }
 
 .learn-chart-container img {
@@ -100,8 +126,13 @@
 
 .learn-tips-section h2 {
     font-size: 40px;
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
     text-align: center;
+    font-family: var(--font-heading);
+    background: var(--gradient-text);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .learn-tips-grid {
@@ -111,27 +142,43 @@
 }
 
 .learn-tip-card {
-    background: var(--color-footer);
-    padding: 2rem;
-    border-radius: 15px;
-    border-top: 5px solid var(--color-subtext);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: var(--glass-bg);
+    padding: 2.5rem;
+    border-radius: 20px;
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.learn-tip-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--gradient-bar);
 }
 
 .learn-tip-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.05);
 }
 
 .learn-tip-card h3 {
     font-size: 24px;
     color: white;
     margin-bottom: 1rem;
+    font-family: var(--font-heading);
 }
 
 .learn-tip-card p {
     color: var(--color-text);
-    line-height: 1.5;
+    line-height: 1.6;
+    font-size: 16px;
 }
 
 /* Animations */
@@ -176,6 +223,7 @@
     .learn-hero {
         flex-direction: column;
         text-align: center;
+        padding: 2rem;
     }
 
     .learn-hero-content {

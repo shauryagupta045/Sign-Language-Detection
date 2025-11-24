@@ -4,6 +4,111 @@
     justify-content: center;
     align-items: center;
     background: var(--color-footer);
+    padding: 4rem 6rem;
+    position: relative;
+    border-top: 1px solid var(--glass-border);
+}
+
+.signlang__footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--gradient-bar);
+}
+
+.signlang__footer-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 3rem;
+}
+
+.signlang__footer-links_logo {
+    display: flex;
+    flex-direction: column;
+    max-width: 250px;
+}
+
+.signlang__footer-links_logo img {
+    width: 120px;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.signlang__footer-links_logo p {
+    font-family: var(--font-family);
+    font-size: 14px;
+    line-height: 24px;
+    color: var(--color-text);
+}
+
+.signlang__footer-links_div {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin: 1rem;
+}
+
+.signlang__footer-links_div h4 {
+    font-size: 18px;
+    line-height: 22px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 1.5rem;
+}
+
+.signlang__footer-links_div p {
+    font-size: 14px;
+    line-height: 20px;
+    font-family: var(--font-family);
+    color: var(--color-text);
+    margin: 0.5rem 0;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.signlang__footer-links_div p:hover {
+    color: #fff;
+}
+
+.signlang__footer-copyright {
+    margin-top: 2rem;
+    text-align: center;
+    width: 100%;
+    padding-top: 2rem;
+    border-top: 1px solid var(--glass-border);
+}
+
+.signlang__footer-copyright p {
+    font-size: 14px;
+    font-family: var(--font-family);
+    line-height: 20px;
+    color: var(--color-text);
+}
+
+@media screen and (max-width: 850px) {
+    .signlang__footer {
+        padding: 4rem;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .signlang__footer {
+        padding: 4rem 2rem;
+    }
+
+    .signlang__footer-links div {
+        margin: 1rem 0;
+        width: 100%;
+    }
 }
 
 .signlang__footer-links {

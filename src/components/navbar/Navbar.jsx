@@ -42,7 +42,7 @@ const Navbar = ({ notifyMsg }) => {
   };
 
   return (
-    <div className="signlang_navbar  gradient__bg">
+    <div className="signlang_navbar">
       <div className="singlang_navlinks">
         <div className="signlang_navlinks_logo">
           <a href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>

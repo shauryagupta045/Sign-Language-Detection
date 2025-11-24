@@ -1,38 +1,48 @@
 .signlang__whatsignlang {
     display: flex;
     flex-direction: column;
-
-    padding: 2rem;
+    padding: 4rem;
     background: var(--color-footer);
-
-    /* ff 3.6+ */
-    background:-moz-radial-gradient(circle at 30% -100%, #042c54 25%, rgba(4, 44, 84, 1) 85%, rgba(27, 120, 222, 1) 100%);
-
-    /* safari 5.1+,chrome 10+ */
-    background:-webkit-radial-gradient(circle at 30% -100%, #042c54 25%, rgba(4, 44, 84, 1) 85%, rgba(27, 120, 222, 1) 100%);
-
-    /* opera 11.10+ */
-    background:-o-radial-gradient(circle at 30% -100%, #042c54 25%, rgba(4, 44, 84, 1) 85%, rgba(27, 120, 222, 1) 100%);
-
-    /* ie 10+ */
-    background:-ms-radial-gradient(circle at 30% -100%, #042c54 25%, rgba(4, 44, 84, 1) 85%, rgba(27, 120, 222, 1) 100%);
-
-    /* global 92%+ browsers support */
-    background:radial-gradient(circle at 30% -100%, #042c54 25%, rgba(4, 44, 84, 1) 85%, rgba(27, 120, 222, 1) 100%);
-
+    background: radial-gradient(circle at 30% -100%, #042c54 25%, rgba(4, 44, 84, 1) 85%, rgba(27, 120, 222, 1) 100%);
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 20px;
+    margin: 4rem 6rem;
+    border: 1px solid var(--glass-border);
+    position: relative;
+    overflow: hidden;
+}
+
+.signlang__whatsignlang::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(174, 103, 250, 0.1) 0%, transparent 70%);
+    animation: rotate 20s linear infinite;
+    z-index: 0;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 .signlang__whatsignlang-feature {
     display: flex;
+    z-index: 1;
 }
 
-/* Customizing feature component as per needs */
 .signlang__whatsignlang-feature .signlang__features-container__feature {
     margin: 0;
 }
 
-/* Customizing feature component as per needs */
 .signlang__whatsignlang-feature .signlang__features-container_feature-text {
     max-width: 700px;
 }
@@ -42,73 +52,78 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    
     margin: 4rem 0 2rem;
+    z-index: 1;
 }
 
 .signlang__whatsignlang-heading h1 {
     font-size: 34px;
     line-height: 45px;
     font-weight: 800;
-    font-family: var(--font-family);
+    font-family: var(--font-heading);
     max-width: 510px;
+    background: var(--gradient-text);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .signlang__whatsignlang-container {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-
     margin-top: 5rem;
+    z-index: 1;
+    gap: 2rem;
 }
 
-/* Customizing feature component as per needs */
 .signlang__whatsignlang-container .signlang__features-container__feature {
     flex: 1;
-    margin: 1rem;
+    margin: 0;
     min-width: 210px;
-    display: unset;
+    display: flex;
     flex-direction: column;
+    background: var(--glass-bg);
+    padding: 2rem;
+    border-radius: 10px;
+    border: 1px solid var(--glass-border);
+    transition: transform 0.3s ease;
 }
 
-/* Customizing feature component as per needs */
+.signlang__whatsignlang-container .signlang__features-container__feature:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.05);
+}
+
 .signlang__whatsignlang-container .signlang__features-container_feature-text {
-    margin-top: 0.5rem;
+    margin-top: 1rem;
 }
 
 @media screen and (max-width: 850px) {
+    .signlang__whatsignlang {
+        margin: 4rem 2rem;
+        padding: 3rem;
+    }
+
     .signlang__whatsignlang-heading {
         flex-direction: column;
         align-items: flex-start;
         margin-bottom: 0rem;
     }
-
-    .signlang__whatsignlang-heading p {
-        margin-top: 1rem;
-    }
 }
 
 @media screen and (max-width: 650px) {
-    /* Customizing feature component as per needs */
-    .signlang__whatsignlang-feature .signlang__features-container__feature {
-        flex-direction: column;
+    .signlang__whatsignlang {
+        margin: 2rem 1rem;
+        padding: 2rem;
     }
 
-    /* Customizing feature component as per needs */
-    .signlang__whatsignlang-feature .signlang__features-container_feature-text {
-        margin-top: 0.5rem;
+    .signlang__whatsignlang-feature .signlang__features-container__feature {
+        flex-direction: column;
     }
 
     .signlang__whatsignlang-heading h1 {
         font-size: 28px;
         line-height: 40px;
-    }
-}
-
-@media screen and (max-width: 350px) {
-    /* Customizing feature component as per needs */
-    .signlang__whatsignlang-container .signlang__features-container__feature {
-        margin: 1rem 0;
-        min-width: 100%;
     }
 }
