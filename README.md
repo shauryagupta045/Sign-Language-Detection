@@ -64,7 +64,32 @@
 
 ## Steps to set up the project
 
-- **Check this document for project setup:** [SetUpDoc.docx](https://docs.google.com/document/d/1siwZjc0LJQgKTn__vtzs8tMfr9OElrsThmqmRJc9dHE/edit?usp=sharing)
+- **Clone the repository**
+  ```bash
+  git clone <repository-url>
+  ```
+
+- **Install dependencies**
+  ```bash
+  npm install
+  ```
+
+- **Set up Environment Variables**
+  Create a `.env.local` file in the root directory and add your Firebase configuration:
+  ```env
+  REACT_APP_FIREBASE_API_KEY=your_api_key
+  REACT_APP_FIREBASE_AUTH_DOMAIN=your_auth_domain
+  REACT_APP_FIREBASE_PROJECT_ID=your_project_id
+  REACT_APP_FIREBASE_STORAGE_BUCKET=your_storage_bucket
+  REACT_APP_FIREBASE_MESSAGE_ID=your_messaging_sender_id
+  REACT_APP_FIREBASE_APP_ID=your_app_id
+  REACT_APP_FIREBASE_MEASUREMENT_ID=your_measurement_id
+  ```
+
+- **Start the application**
+  ```bash
+  npm start
+  ```
 
 
 ## Acknowledgements
